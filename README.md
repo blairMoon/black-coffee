@@ -244,3 +244,23 @@ live-server 폴더명
 ## 📝 License
 
 This project is [MIT](https://github.com/blackcoffee-study/moonbucks-menu/blob/main/LICENSE) licensed.
+
+## 07.09 인사이트
+
+1. 함수를 기능뿐만 아니라 return을 사용하여 템플릿을 만들 때에도 사용한다는 것에 익숙해지기
+2. 함수안에서 조건에 따라 실행여부 차이를 둔다면 return 사용하기
+3. 객체 안에 함수 저장하는 것이 가능하다
+   화살표함수를 객체 안에 넣는 것은 가능하지만, 이 경우 this 키워드에 주의해야 합니다.
+   화살표 함수는 자신만의 this를 가지지 않기 때문에,
+   화살표 함수 내부에서 this를 사용하면 객체의 메서드가 아닌, 상위 스코프의 this를 참조하게 됩니다.
+
+   let obj = {
+   greeting: 'Hello, world!',
+   sayHello: () => {
+   console.log(this.greeting); // this는 상위 스코프의 this를 가리킵니다.
+   }
+   };
+
+obj.sayHello(); // undefined가 출력됩니다.
+
+### 이부분에 대해서 렉시컬 this + this (딥다이브 책으로 더 공부하기)
